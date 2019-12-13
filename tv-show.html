@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <!-- Favicone Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <!--This is the touch icons Start -->
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+    <!-- For the iPad mini and the first- and second-generation iPad on iOS ? 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+    <!-- For the iPad mini and the first- and second-generation iPad on iOS ? 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76-precomposed.png">
+    <!-- For iPhone with high-resolution Retina display running iOS ? 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+    <!-- For iPhone with high-resolution Retina display running iOS ? 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120-precomposed.png">
+    <!-- For iPad with high-resolution Retina display running iOS ? 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+    <!-- For iPad with high-resolution Retina display running iOS ? 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152-precomposed.png">
+    <!-- Chrome v31+ for Android -->
+    <link rel="icon" sizes="192x192" href="apple-touch-icon.png">
+    <!-- Apple "pinned tab" icons -->
+    <link rel="mask-icon" href="website_icon.svg" color="red">
+    <!--This is the touch icons End -->
+
+    <title>Movify - TV Show page</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/GrayGrids/LineIcons/LineIcons.css">
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <style>
+        .thumbnail {
+            display: block;
+            padding: 0;
+            line-height: 1.42857143;
+            background-color: transparent !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            transition: border .2s ease-in-out;
+        }
+
+        .thumbnail>img {
+            overflow: hidden;
+            -webkit-transform: all 1s ease-in-out;
+            transform: all 1s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-inner>.item>img,
+        .carousel-inner>.item>a>img {
+            width: 100%;
+        }
+
+        .carousel-inner .item img {
+            display: block;
+            width: 16vw;
+            height: 6.99vw;
+            /* object-fit: cover; */
+            object-position: center;
+            border: double 2px transparent;
+            border-radius: 50%;
+            background-image: linear-gradient(white, white), radial-gradient(circle at bottom left, #f7eb0f, #e17407);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+        }
+
+        .badge {
+            background: #b8900a !important;
+            font-size: 0.7vw !important;
+            margin-left: 5px;
+        }
+
+        p.desc-movie-page {
+            font-size: 0.9vw;
+            line-height: 1.2vw;
+            width: 86% !important;
+            color: #bfbfbf;
+            word-break: break-word;
+        }
+    </style>
+
+</head>
+
+<body class="row-bg animated fadeIn delay-1s">
+
+    <!-- .Start Brand Header -->
+    <div class="header-wrapper-standard navbar navbar-fixed-top">
+        <div class="col-md-12">
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <a class="back-arrow" href="../">
+                    <i class="fa fa-long-arrow-left" aria-hidden="true"></i> Retour
+                </a>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html"><img src="assets/movify-logo.png" title="Movify - the one"
+                            alt="Movify" class="main-logo-movie-page" /></a>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 col-sm-4 col-xs-4">
+                <div class="text-center login-home">
+                    <span class="login-home-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+                    <a href="#" title="Login OR Register">Login <strong>OR</strong> Register</a>
+                </div>
+
+                <div class="search-icon-movie-page">
+                    <a href="#" title="Movify - the one" class="search-icon" onclick="openSearch()">
+                        <i class="fa fa-search search-icon-movie-page" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!--Start Overlay Search Box-->
+            <div id="searchBox" class="overlay-search-box animated">
+                <span class="closebtn animated fadeIn delay-1s" onclick="closeSearch()"
+                    title="Quitter la recherche">×</span>
+                <div class="overlay-search-box-content animated fadeIn delay-1s">
+                    <form class="visibility" action="#">
+                        <input type="text" placeholder="So, what are you looking for?" name="search">
+                        <span class="overlay-search-icon"><i class="fa fa-search"></i></span>
+                    </form>
+
+
+                    <div class="tabbable-panel">
+                        <div class="tabbable-line">
+                            <ul class="nav nav-tabs ">
+                                <li class="active">
+                                    <a href="#tab_default_1" data-toggle="tab">
+                                        <h3>Tout</h3>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab_default_2" data-toggle="tab">
+                                        <h3>Movies</h3>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab_default_3" data-toggle="tab">
+                                        <h3>TV Shows</h3>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active animated fadeIn delay-0.65s" id="tab_default_1">
+                                    <p class="nbr-search-results pull-right">
+                                        65 sur 1045012 Results
+                                    </p>
+                                    <div class="clearfix"></div>
+
+
+                                </div>
+
+                                <div class="tab-pane animated fadeIn delay-0.65s" id="tab_default_2">
+                                    <p class="nbr-search-results pull-right">
+                                        65 sur 1045012 Results
+                                    </p>
+                                    <div class="clearfix"></div>
+
+                                </div>
+
+                                <div class="tab-pane animated fadeIn delay-0.65s" id="tab_default_3">
+                                    <p class="nbr-search-results pull-right">
+                                        65 sur 1045012 Results
+                                    </p>
+                                    <div class="clearfix"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--./End Start Overlay Search Box-->
+        </div>
+    </div>
+    <!-- ./Start Brand Header -->
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--right movie page sidebar-nav-->
+            <div class="col-md-2 hidden-sm hidden-xs">
+                <div class="sidebar-nav-fixed-right-tvs pull-right affix">
+                    <div class="right-sidebar-container-tvshow-page">
+                        <ul class="nav top-space">
+                            <li class="nav-header sidebar-heading">
+                                <h2><strong>Sais</strong>ons</h2>
+                            </li>
+                        </ul>
+                        <div id="recently" class="tvshow-page-container">
+
+                            <div>
+                                <select title="CHOISISSEZ UNE SAISON" class="select-tvshow">
+                                    <!--    <option>Choisissez une Saison</option> -->
+                                    <option value="episodes-list-1" selected> Saison #1 </option>
+                                    <option value="episodes-list-2"> Saison #2 </option>
+                                    <option value="episodes-list-3"> Saison #3 </option>
+
+                                    <!--  Emmet Abbr:  option[value=episodes-list]*20 -->
+                                </select>
+                            </div>
+                            <div class="episodes-list episodes-list-1 boxSaisons animated fadeIn delay-0.2s">
+                                <ul class="episodes-list-style">
+                                    <li>
+                                        <a href="#">
+                                            <strong>1- </strong> Cras justo odio
+                                            <span class="badge">New</span>
+                                            <span><a href=""><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
+                                            <span class="pin-me"><a href=""><i class="fa fa-thumb-tack"
+                                                        aria-hidden="true"></i></a></span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">
+                                            <strong>2- </strong> Dapibus ac facilisis in
+                                            <span><a href=""><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
+                                            <span class="pin-me"><a href=""><i class="fa fa-thumb-tack"
+                                                        aria-hidden="true"></i></a></span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"> <strong>3- </strong> Morbi leo risus</a></li>
+                                    <li><a href="#"> <strong>4- </strong> Porta ac consectetur ac</a></li>
+                                    <li><a href="#"> <strong>5- </strong> Vestibulum at eros</a></li>
+
+                                    <li><a href="#">
+                                            <strong>6- </strong> Cras justo odio 1
+                                            <span class="badge">New</span>
+                                            <span><a href=""><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
+                                            <span class="pinned-icon"><a href=""><i class="fa fa-thumb-tack"
+                                                        aria-hidden="true"></i></a></span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"> <strong>7- </strong> Dapibus ac facilisis in 1</a></li>
+                                    <li><a href="#"> <strong>8- </strong> Morbi leo risus 1</a></li>
+                                    <li><a href="#"> <strong>9- </strong> Porta ac consectetur ac 1</a></li>
+                                    <li><a href="#"> <strong>10-</strong> Vestibulum at eros 1</a></li>
+
+                                    <li><a href="#"> <strong>11-</strong> Cras justo odio 2</a></li>
+                                    <li><a href="#"> <strong>12-</strong> Dapibus ac facilisis in 2</a></li>
+                                    <li><a href="#"> <strong>13-</strong> Morbi leo risus 2</a></li>
+                                    <li><a href="#"> <strong>14-</strong> Porta ac consectetur ac 2</a></li>
+                                    <li><a href="#"> <strong>15-</strong> Vestibulum at eros 2</a></li>
+
+                                    <li><a href="#"> <strong>16-</strong> Cras justo odio 3</a></li>
+                                    <li><a href="#"> <strong>17-</strong> Dapibus ac facilisis in 3</a></li>
+                                    <li><a href="#"> <strong>18-</strong> Morbi leo risus 3</a></li>
+                                    <li><a href="#"> <strong>19-</strong> Porta ac consectetur ac 3</a></li>
+                                    <li><a href="#"> <strong>20-</strong> Vestibulum at eros 3</a></li>
+                                    <li>
+                                        <a href="#">
+                                            <strong>1- </strong> Cras justo odio
+                                            <span class="badge">New</span>
+                                            <span><a href=""><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
+                                            <span class="pin-me"><a href=""><i class="fa fa-thumb-tack"
+                                                        aria-hidden="true"></i></a></span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">
+                                            <strong>2- </strong> Dapibus ac facilisis in
+                                            <span><a href=""><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
+                                            <span class="pin-me"><a href=""><i class="fa fa-thumb-tack"
+                                                        aria-hidden="true"></i></a></span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"> <strong>3- </strong> Morbi leo risus</a></li>
+                                    <li><a href="#"> <strong>4- </strong> Porta ac consectetur ac</a></li>
+                                    <li><a href="#"> <strong>5- </strong> Vestibulum at eros</a></li>
+
+                                    <li><a href="#">
+                                            <strong>6- </strong> Cras justo odio 1
+                                            <span class="badge">New</span>
+                                            <span><a href=""><i class="fa fa-clock-o" aria-hidden="true"></i></a></span>
+                                            <span class="pinned-icon"><a href=""><i class="fa fa-thumb-tack"
+                                                        aria-hidden="true"></i></a></span>
+                                        </a>
+                                    </li>
+                                    <li><a href="#"> <strong>7- </strong> Dapibus ac facilisis in 1</a></li>
+                                    <li><a href="#"> <strong>8- </strong> Morbi leo risus 1</a></li>
+                                    <li><a href="#"> <strong>9- </strong> Porta ac consectetur ac 1</a></li>
+                                    <li><a href="#"> <strong>10-</strong> Vestibulum at eros 1</a></li>
+
+                                    <li><a href="#"> <strong>11-</strong> Cras justo odio 2</a></li>
+                                    <li><a href="#"> <strong>12-</strong> Dapibus ac facilisis in 2</a></li>
+                                    <li><a href="#"> <strong>13-</strong> Morbi leo risus 2</a></li>
+                                    <li><a href="#"> <strong>14-</strong> Porta ac consectetur ac 2</a></li>
+                                    <li><a href="#"> <strong>15-</strong> Vestibulum at eros 2</a></li>
+
+                                    <li><a href="#"> <strong>16-</strong> Cras justo odio 3</a></li>
+                                    <li><a href="#"> <strong>17-</strong> Dapibus ac facilisis in 3</a></li>
+                                    <li><a href="#"> <strong>18-</strong> Morbi leo risus 3</a></li>
+                                    <li><a href="#"> <strong>19-</strong> Porta ac consectetur ac 3</a></li>
+                                    <li><a href="#"> <strong>20-</strong> Vestibulum at eros 3</a></li>
+                                </ul>
+                            </div>
+                            <div class="episodes-list episodes-list-2 boxSaisons animated fadeIn delay-0.2s">
+                                <ul class="episodes-list-style">
+                                    <li><a href="#"> <strong>16-</strong> Cras justo odio 3</a></li>
+                                    <li><a href="#"> <strong>17-</strong> Dapibus ac facilisis in 3</a></li>
+                                    <li><a href="#"> <strong>18-</strong> Morbi leo risus 3</a></li>
+                                    <li><a href="#"> <strong>19-</strong> Porta ac consectetur ac 3</a></li>
+                                    <li><a href="#"> <strong>20-</strong> Vestibulum at eros 3</a></li>
+
+                                    <li><a href="#"> <strong>16-</strong> Cras justo odio 3</a></li>
+                                    <li><a href="#"> <strong>17-</strong> Dapibus ac facilisis in 3</a></li>
+                                    <li><a href="#"> <strong>18-</strong> Morbi leo risus 3</a></li>
+                                    <li><a href="#"> <strong>19-</strong> Porta ac consectetur ac 3</a></li>
+                                    <li><a href="#"> <strong>20-</strong> Vestibulum at eros 3</a></li>
+                                </ul>
+                            </div>
+                            <div class="episodes-list episodes-list-3 boxSaisons animated fadeIn delay-0.2s">
+                                <ul class="episodes-list-style">
+                                    <li><a href="#"> <strong>1-</strong> Cras justo odio 3</a></li>
+                                    <li><a href="#"> <strong>2-</strong> Dapibus ac facilisis in 3</a></li>
+                                    <li><a href="#"> <strong>3-</strong> Morbi leo risus 3</a></li>
+                                    <li><a href="#"> <strong>4-</strong> Porta ac consectetur ac 3</a></li>
+                                    <li><a href="#"> <strong>5-</strong> Vestibulum at eros 3</a></li>
+
+                                    <li><a href="#"> <strong>6-</strong> Cras justo odio 3</a></li>
+                                    <li><a href="#"> <strong>7-</strong> Dapibus ac facilisis in 3</a></li>
+                                    <li><a href="#"> <strong>8-</strong> Morbi leo risus 3</a></li>
+                                    <li><a href="#"> <strong>9-</strong> Porta ac consectetur ac 3</a></li>
+                                    <li><a href="#"> <strong>10-</strong> Vestibulum at eros 3</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Warn me button-->
+                            <div class="flexme">
+                                <p>Warn me for new Episode</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.well -->
+            </div>
+            <!--/right sidebar-->
+        </div>
+    </div>
+    <!--/span-->
+
+
+    </div>
+    <!--/row-->
+
+    <!--.Start Movie Page Content-->
+    <section id="" class="tvshow-backdrop">
+        <div class="row">
+            <div class="col-md-12 col-top">
+                <div class="col-md-4">
+                    <h1 class="movie-logo pull-left">
+                        Creed II
+                        <img src="assets/img/movie-logo/insatiable-logo.png" class="ZoomIN" alt="" />
+                    </h1>
+                    <div class="clearfix"></div>
+                    <!--                     <h3><span style="color: #fff; font-weight: bold; background: #b8900a; padding: 4px; box-shadow: -4px 4px 3px 0px rgba(0, 0, 0, 0.64);">PART</span>AGER</p>
+ -->
+                    <div class="social-warapper-movie-page">
+                        <ul class="share-icon-movie-page">
+                            <li> <i class="fa fa-facebook" aria-hidden="true"></i></li>
+                            <li> <i class="fa fa-twitter" aria-hidden="true"></i></li>
+                            <li> <i class="fa fa-google" aria-hidden="true"></i></li>
+                            <li> <i class="fa fa-envelope" aria-hidden="true"></i></li>
+                            <li> <i class="fa fa-thumb-tack" aria-hidden="true"></i></li>
+                        </ul>
+                    </div>
+
+
+                    <!--<ul class="col-sm-12 tvshow-page-btn">
+                        <li class="active">
+                            <a onclick="openNav()">
+                                <i class="fa fa-lock" aria-hidden="true"></i> &nbsp;
+                                LECTURE
+                            </a>
+                        </li>
+
+                        <li class="hover-pin">
+                            <a href="#">
+                                <i class="fa fa-plus" aria-hidden="true"></i> &nbsp;
+                                AFFICHER PLUS
+                            </a>
+                        </li>
+
+                        <li class="like-movie-page">
+                            <a href="#" id="like-movie-page">
+                                <span class="like-me fa-stack fa-2x has-badge" data-count="120">
+                                    <i class="p2 fa fa-circle fa-stack-2x"></i>
+                    <i onclick="likeDislike(this)" class="fa fa-thumbs-up fa-stack-1x xfa-inverse" data-count="4b"></i>
+                    </span>
+                    </a>
+                    </li>
+                    </ul>-->
+                </div>
+
+                <div class="cover-video col-md-6 col-right-top">
+                    <div class="above-video">
+                        <div class="rating__wrapper">
+                            <input type="radio" class="rating__input" name="thumbs" value="5" id="ratingGood">
+                            <label id="like" class="rating__label" for="ratingGood">
+                                <i class="fa fa-smile-o" aria-hidden="true"></i>
+                                <span class="description-like">
+                                    122</span>
+                            </label>
+                            <input type="radio" class="rating__input" name="thumbs" value="1" id="ratingBad">
+                            <label id="dislike" class="rating__label" for="ratingBad">
+                                <i class="fa fa-frown-o" aria-hidden="true"></i>
+                                <span class="description-dislike">
+                                    115</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div id="rmpPlayer"></div>
+                </div>
+            </div>
+            <div class="col-md-4 desc-override-top">
+
+                <!-- TV-Show Info -->
+                <div class="info-movie-page">
+                    <div>
+                        <p><i class="fa fa-clock-o" aria-hidden="true"></i> 1h 60 min </p>
+                    </div>
+                    <div>
+                        <p><i class="fa fa-calendar" aria-hidden="true"></i> 2018</p>
+                    </div>
+                    <div>
+                        <p><i class="fa fa-cc" aria-hidden="true"></i></p>
+                    </div>
+                    <div>
+                        <p><strong><i>HD</i></strong></p>
+                    </div>
+                    <div>
+                        <p><i class="fa fa-imdb" aria-hidden="true"></i> 7.6</p>
+                    </div>
+                </div>
+
+                <!-- TV-Show Tags -->
+                <div class="tags-movie-page">
+                    <span>Action</span>
+                    |
+                    <span>Aventure</span>
+                    |
+                    <span>Fantaisie</span>
+                    |
+                    <span>Science Fiction</span>
+                    |
+                    <span>Thriller</span>
+                </div>
+
+                <div class="heading-movie-page">
+                    <h4>RÉALISATEUR</h4>
+                    Christian RIVERS
+
+                </div>
+                <div class="heading-movie-page">
+                    <h4>CASTING</h4>
+                    <span>Hera HILMAR,</span> <span>Robert FERERRO,</span> <span>Joe DOE</span>
+
+                </div>
+
+                <!-- TV-Show Resume -->
+                <div class="heading-movie-page">
+                    <h4>RESUMÉ</h4>
+                    <p class="desc-movie-page">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et
+                        minus
+                        beatae veritatis?</p>
+                </div>
+            </div>
+
+            <div class="row footer-movie-page">
+                <div class="col-md-10">
+                    <!-- TV-Show You May Also Like -->
+                    <div class="col-md-5 heading-movie-page col-bottom-right">
+                        <div id="CarouselShow" class="carousel slide">
+
+                            <h4>Découvrez aussi</h4>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <div class="row">
+                                        <div class="col-md-3"><a href="#" class="thumbnail"><img class="img-border"
+                                                    src="assets/img/header/1.jpg" alt="Image"></a></div>
+                                        <div class="col-md-3"><a href="#" class="thumbnail"><img class="img-border"
+                                                    src="assets/img/header/2.jpg" alt="Image"></a></div>
+                                        <div class="col-md-3"><a href="#" class="thumbnail"><img class="img-border"
+                                                    src="assets/img/header/3.jpg" alt="Image"></a></div>
+                                    </div>
+                                    <!--.row-->
+                                </div>
+                                <!--.item-->
+
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-md-3"><a href="#" class="thumbnail"><img class="img-border"
+                                                    src="assets/img/header/4.jpg" alt="Image"
+                                                    ></a></div>
+                                        <div class="col-md-3"><a href="#" class="thumbnail"><img class="img-border"
+                                                    src="assets/img/header/5.jpg" alt="Image"
+                                                    ></a></div>
+                                        <div class="col-md-3"><a href="#" class="thumbnail"><img class="img-border"
+                                                    src="assets/img/header/6.jpg" alt="Image"
+                                                    ></a></div>
+                                    </div>
+                                    <!--.row-->
+                                </div>
+                                <!--.item-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- COMMENTS BOX -->
+                    <div class="col-md-6 text-center col-bottom-comments">
+
+                        <div class="detailBox">
+                            <ul class="nav top-space">
+                                <li class="nav-header comments-heading">
+                                    <h2><strong>Commen</strong>taires</h2>
+                                </li>
+                            </ul>
+                            <div class="actionBox">
+                                <ul class="commentList">
+                                    <li>
+                                        <div class="commenterImage">
+                                            <img src="http://placekitten.com/50/50" />
+                                        </div>
+                                        <div class="commentText">
+                                            <p class="">Hello this is a test comment.</p> <span class="date sub-text">on
+                                                March 5th, 2014</span>
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="commenterImage">
+                                            <img src="http://placekitten.com/45/45" />
+                                        </div>
+                                        <div class="commentText">
+                                            <p class="">Hello this is a test comment and this comment is particularly
+                                                very long and it goes on and on and on.</p> <span
+                                                class="date sub-text">on March 5th, 2014</span>
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="commenterImage">
+                                            <img src="http://placekitten.com/40/40" />
+                                        </div>
+                                        <div class="commentText">
+                                            <p class="">Hello this is a test comment.</p> <span class="date sub-text">on
+                                                March 5th, 2014</span>
+
+                                        </div>
+                                    </li>
+                                </ul>
+                                <form class="form-inline" role="form">
+                                    <div class="form-group">
+                                        <input class="input-comments" type="text" placeholder="..." />
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="cmts cmts-comments">Comment</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- ./TV-Show You May Also Like -->
+                </div>
+    </section>
+    <!--/.End Content-->
+
+    <script type="text/javascript">
+
+    </script>
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/jQueryPagination.js"></script>
+
+    <!-- Radiant Media Player library -->
+    <script async src="https://cdn.radiantmediatechs.com/rmp/5.1.5/js/rmp-hlsjslight.min.js"></script>
+
+    <script>
+        var src = {
+            mp4: [
+                'https://www.radiantmediaplayer.com/media/nasa-v2/top-17-338p.mp4',
+                'https://www.radiantmediaplayer.com/media/nasa-v2/top-17-506p.mp4',
+                'https://www.radiantmediaplayer.com/media/nasa-v2/top-17-674p.mp4',
+                'https://www.radiantmediaplayer.com/media/nasa-v2/top-17-1012p.mp4'
+            ],
+            hls: 'https://5b44cf20b0388.streamlock.net:8443/vod/_definst_/nasa-v2/smil:top-17.smil/playlist.m3u8'
+        };
+        var settings = {
+            width: 960,
+            height: 506,
+            licenseKey: 'Kl8lMHN6c3VjczUyN2U/cm9tNWRhc2lzMzBkYjBBJV8q',
+            src: src,
+            gaTrackingId: 'UA-54723413-1',
+            gaCategory: 'RMP-homepage',
+            gaLabel: 'nasa-v2',
+            sharing: true,
+            preload: 'auto',
+            quickRewind: 10,
+            seekBarThumbnailsLoc: 'https://www.radiantmediaplayer.com/media/thumbnails/top-17-thumbnails.vtt',
+            sharingNetworks: ['facebook', 'twitter', 'linkedin', 'email'],
+            sharingCode: '<iframe width="480" height="253" src="https://www.radiantmediaplayer.com/docs/latest/gist/iframe/index.html" style="border:none;" allowfullscreen></iframe>',
+            skin: 's3',
+            poster: 'assets/img/backdrops/insatiable-poster.jpg',
+            asyncElementID: 'rmpPlayer'
+        };
+        if (typeof window.rmpAsyncPlayers === 'undefined') {
+            window.rmpAsyncPlayers = [];
+        }
+        window.rmpAsyncPlayers.push(settings);
+        // Reference to our player container div 
+        var elementID = 'rmpPlayer';
+        // Create an object based on RadiantMP constructor
+        var rmp = new RadiantMP(elementID);
+        // Initialization ... test your page and done!
+        rmp.init(settings);
+    </script>
+
+</body>
+
+</html>

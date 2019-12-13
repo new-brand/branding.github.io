@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <!-- Favicone Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <!--This is the touch icons Start -->
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
+    <!-- For the iPad mini and the first- and second-generation iPad on iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+    <!-- For the iPad mini and the first- and second-generation iPad on iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76-precomposed.png">
+    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120-precomposed.png">
+    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152-precomposed.png">
+    <!-- Chrome v31+ for Android -->
+    <link rel="icon" sizes="192x192" href="apple-touch-icon.png">
+    <!-- Apple "pinned tab" icons -->
+    <link rel="mask-icon" href="website_icon.svg" color="red">
+    <!--This is the touch icons End -->
+
+    <title>Movify - Movie Lists page</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/progress-circle.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.6.0/video-js.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    <style>
+
+    /* iframe {
+        width: 100% !important;
+        height: auto !important;
+    }  */
+    .wrapper-video {
+        position: relative;
+        top: 2vw;
+        height: 100%;
+        /*  border: 5px solid #ff00ff; */
+    }
+
+    .video-wrapper {
+        position: relative;
+        /* top: 4.5vw; */
+        z-index: 1;
+        overflow: hidden;
+        width: 100%;
+    /*   max-height: 277px; */
+        height: auto;
+        background: #333;
+        margin: 0 auto;
+    }
+    .video-wrapper .video {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+    /*  max-width: 1500px; */
+        height: 36vw;
+        margin: auto;
+        overflow: hidden;
+}
+
+</style>
+
+</head>
+
+<body class="animated fadeIn delay-1s">
+
+    <!-- .Start Brand Header -->
+    <div class="header-wrapper navbar navbar-fixed-top">
+        <!-- .Wrapper Navbar Header -->
+        <div class="col-md-9 col-md-offset-1">
+            <!-- Logo -->
+            <div class="col-md-4 col-sm-4 col-xs-4 pull-left">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html"><img src="assets/movify-logo.png" title="Movify - the one"
+                            alt="Movify" class="main-logo" /></a>
+                </div>
+            </div>
+            <!-- .Search icon & User Header Profile -->
+            <div class="col-md-4 col-sm-4 col-xs-4 pull-right">
+                <div class="text-center login-home">
+                    <span class="login-home-icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+                    <a href="#" title="Login OR Register">Login <strong>OR</strong> Register</a>
+                </div>
+
+                <div class="search-icon">
+                    <a href="#" title="Movify - the one" class="search-icon" onclick="openSearch()">
+                        <i class="fa fa-search search-icon" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!--Start Overlay Search Box-->
+            <div id="searchBox" class="overlay-search-box animated">
+                <span class="closebtn animated fadeIn delay-1s" onclick="closeSearch()" title="Quitter la recherche">×</span>
+                <div class="overlay-search-box-content animated fadeIn delay-1s">
+                    <form class="visibility" action="#">
+                        <input type="text" placeholder="So, what are you looking for?" name="search">
+                        <span class="overlay-search-icon"><i class="fa fa-search"></i></span>
+                    </form>
+
+
+                    <div class="tabbable-panel">
+                        <div class="tabbable-line">
+                            <ul class="nav nav-tabs ">
+                                <li class="active">
+                                    <a href="#tab_default_1" data-toggle="tab">
+                                        <h3>Tout</h3>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab_default_2" data-toggle="tab">
+                                        <h3>Movies</h3>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab_default_3" data-toggle="tab">
+                                        <h3>TV Shows</h3>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active animated fadeIn delay-0.65s" id="tab_default_1">
+                                    <p class="nbr-search-results pull-right">
+                                        65 sur 1045012 Results
+                                    </p>
+                                    <div class="clearfix"></div>
+
+
+                                </div>
+
+                                <div class="tab-pane animated fadeIn delay-0.65s" id="tab_default_2">
+                                    <p class="nbr-search-results pull-right">
+                                        65 sur 1045012 Results
+                                    </p>
+                                    <div class="clearfix"></div>
+
+                                </div>
+
+                                <div class="tab-pane animated fadeIn delay-0.65s" id="tab_default_3">
+                                    <p class="nbr-search-results pull-right">
+                                        65 sur 1045012 Results
+                                    </p>
+                                    <div class="clearfix"></div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--./End Start Overlay Search Box-->
+        </div>
+        <!-- ./Wrapper Navbar Header -->
+    </div>
+    <!-- ./Start Brand Header -->
+
+    <!-- .Whole Movie Lists Page Sections Container-->
+    <div class="container-fluid">
+        <!-- .Top row Container-->
+        <div class="row">
+            <!-- .left sidebar-nav-->
+            <div class="col-md-2 hidden-sm hidden-xs">
+                <div class="sidebar-nav-fixed-left affix">
+                    <div class="left-sidebar-container">
+                        <ul class="nav top-space">
+                            <li class="nav-header sidebar-heading">
+                                <h2><strong>Me</strong>nu</h2>
+                            </li>
+                        </ul>
+                        <div class="main-menu">
+                            <ul class="nav">
+                                <li>
+                                    <a href="index.html">Accueil</a>
+                                </li>
+                                <li>
+                                    <a href="tv-show.html">TV Show</a>
+                                </li>
+                                <li>
+                                    <a href="movie-page.html">Films</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="line-divider"></div>
+                        <div class="clearfix"></div>
+
+                        <div class="secondary-menu">
+                            <ul class="nav">
+                                <li>
+                                    <a>Aléatoire</a>
+                                </li>
+                                <li>
+                                    <a>Smartflix</a>
+                                </li>
+                                <li>
+                                    <a>Battle</a>
+                                </li>
+                                <li>
+                                    <a>Request</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="notification-menu">
+                            <ul class="nav">
+                                <li>
+                                    <a>
+                                        <div class="notification-badge">10</div>
+                                        <img src="assets/img/icon/continue-watching-movify.png" width="48" height="48"
+                                            alt="">
+                                        <p>POURSUIVRE </p>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a>
+                                        <div class="notification-badge">2</div>
+                                        <img src="assets/img/icon/pin-movies-movify.png" width="48" height="48" alt="">
+                                        <p>PINNED LISTE</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="main-footer">
+                            <p class="footer-copy">&copy; Movify - 2019</p>
+                        </div>
+                    </div>
+                    <!--/.well -->
+                </div>
+                <!--/left sidebar-nav-->
+
+                <!--right sidebar-nav-->
+                <div class="col-md-2 hidden-sm hidden-xs">
+                    <div class="sidebar-nav-fixed-right right-sidebar-container pull-right affix">
+                        <div class="movie-preview-container">
+                            <!--    <ul class="nav top-space">
+                                <li class="nav-header sidebar-heading">
+                                    <h2><strong>Ape</strong>rçu</h2>
+                                </li>
+                            </ul> -->
+                            <div id="recently">
+                                <div class="movie-preview-content">
+
+                                    <div class="data-movie-page">
+                                        <div>
+                                            <p><i class="fa fa-clock-o" aria-hidden="true"></i> 1h60</p>
+                                        </div>
+                                        <div>
+                                            <p><i class="fa fa-cc" aria-hidden="true"></i></p>
+                                        </div>
+                                        <div>
+                                            <p><strong><i>HD</i></strong></p>
+                                        </div>
+                                        <!-- <div>
+                                            <p><i class="fa fa-imdb" aria-hidden="true"></i> 7.6</p>
+                                        </div> -->
+                                        <div>
+                                            <p><i class="fa fa-eye" aria-hidden="true"></i> 230</p>
+                                        </div>
+                                        <div>
+                                            <p><i class="fa far fa-heart" aria-hidden="true"></i> 125</p>
+                                        </div>
+                                    </div>
+
+                                    <flex-container>
+                                        <flex-item>
+                                            <div class="title-movie-preview">
+                                                <h3 id="title-movie-preview">THE FAVOURITE FILMS EVER SNIPPER</h3>
+                                            </div>
+
+                                            <div class="tags-movie-preview">
+                                                <span>Action</span>
+                                                <span>Aventure</span>
+                                                <span>Fantaisie</span>
+                                                <span>Science Fiction</span>
+                                                <span>Thriller</span>
+                                            </div>
+                                        </flex-item>
+
+                                        <flex-item>
+                                            <div class="progress-circle-container">
+                                                <div class="progress-circle progress-45"><span><strong>5.5</strong>&nbsp;&nbsp;</span></div>
+
+                                            </div>
+                                        </flex-item>
+                                    </flex-container>
+
+                                    <div class="year-movie-preview">
+                                        <h4>Année <span class="year">2018</span></h4>
+                                    </div>
+
+                                    <div class="director-movie-preview">
+                                        <h4>Réalisateur</h4>
+                                        <p>
+                                            <span>Christian RIVERS</span>
+                                        </p>
+                                    </div>
+
+                                    <div class="mainActors-movie-preview">
+                                        <h4>Acteurs Principaux</h4>
+                                        <p>
+                                            <span>Hera HILMAR,</span> <span>Robert FERERRO,</span> <span>Joe DOE</span>
+                                        </p>
+                                    </div>
+
+
+                                    <div class="footer-movie-preview">
+                                        <div class="trailer-heading-movie-preview">
+                                            <h4>Bande D'annonce</h4>
+                                        </div>
+
+                                        <!-- Small Video Trailler Row-->
+
+                                        <!--        <div class="video-wrapper embed-responsive embed-responsive-16by9">
+                                            <div class="video" id="video"></div>
+                                        </div> -->
+
+                                        <video width="100%" controls>
+                                            <source src="http://fr.vid.web.acsta.net/nmedia/s3/33/18/95/15/80/19475596_hd_013.mp4"
+                                                type="video/mp4">
+                                            Your browser does not support HTML5 video.
+                                        </video>
+
+                                        <!--  <h4 class="border-h4">Resumé</h4> -->
+                                        <div class="short-desc-sidebar-preview">
+                                            <h4>Resumé</h4>
+                                            <p>
+                                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum nemo
+                                                animi enim praesentium cupiditate deleniti veritatis sit amet
+                                                consectetur.
+                                            </p>
+                                            <a class="watch-trailer-btn-active pull-left" href="#" title="Watch now">
+                                                Lecture
+                                            </a>
+
+                                            <a class="watch-trailer-btn pull-right" href="#">
+                                                <span title="Add to My Library" class="pin">Épingler</span>
+                                                <span title="Remove from My Library" class="unpin">Désépingler</span>
+                                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- <ul class="footer-icon-movie-preview">
+                                        <li> <i class="fa fa-play-circle" aria-hidden="true"></i></li>
+                                        <li> <i class="fa fa-play-circle" aria-hidden="true"></i></li>
+                                        <li> <i class="fa fa-play-circle" aria-hidden="true"></i></li>
+                                    </ul> -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.well -->
+                </div>
+                <!--/.right sidebar-->
+            </div>
+        </div>
+    </div>
+    <!-- ./Top row Container-->
+
+
+    <!--.Start Main Movie Page Content-->
+    <div class="m-l-p-main-wrapper col-md-9 col-md-offset-1">
+
+
+    </div>
+    <!--/.fluid-container-->
+    </div>
+    <!--/.Whole Movie Lists Page Sections Container-->
+
+
+
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-1.11.1.min.js"></script>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <!-- IMDB Circular Progress Bar JavaScript -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.6.0/video.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-youtube/2.4.1/Youtube.js"></script>
+
+</body>
+
+</html>
